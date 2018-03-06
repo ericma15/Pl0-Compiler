@@ -1,0 +1,16 @@
+const d=10;
+var a,b,c;
+procedure swap;
+var a,b,c,d;
+begin
+a:= 3;
+write(a,3,4);
+end;
+begin
+ read(b);
+ read(a,c);
+ c:=a+b;
+call swap;
+ if c>15 then
+ write(a,b,c);
+end.

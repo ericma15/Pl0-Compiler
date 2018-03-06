@@ -1,0 +1,5 @@
+var a;
+begin
+    a:=3/0
+end.
+     

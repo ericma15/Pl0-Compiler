@@ -1,0 +1,8 @@
+const z=1;    
+var x;
+procedure fun;
+var x,x; 
+begin           
+end;
+begin
+end.

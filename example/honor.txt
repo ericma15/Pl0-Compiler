@@ -1,0 +1,31 @@
+
+const    Times = 6 ;
+var       loop , x , result  , subresult ,subloop;
+procedure   pow;
+     begin
+          subloop:=loop;
+          subresult := 1 ;
+          while  subloop >= 0 do
+           begin
+                 if   subloop <> 0 then
+                    subresult := subresult*x  ;
+                 subloop:=subloop-1
+           end;
+     end;
+
+begin  
+       read(x) ;                   
+       write(x) ;                      
+       
+       result := 0 ; 
+       loop:= 0 ;
+       while  loop < Times do     
+          begin
+                call pow ;    
+                result := result + subresult ;
+                loop := loop+1 ;
+          end ;
+  write(result) ;        
+
+end.
+             

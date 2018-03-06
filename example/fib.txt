@@ -1,0 +1,22 @@
+var
+	f1,f2,f3,flag,Number;
+begin
+	f1:=1;
+	f2:=1;
+	flag:=3;
+	read(Number);
+	if Number=1 then write(f1);
+	if Number>=2 then
+	begin
+		write(f1);write(f2);
+		while flag<=Number do
+                begin
+			f3:=f1+f2;
+			f1:=f2;
+			f2:=f3;
+			write(f3);
+			flag:=flag+1;
+                end
+                
+	end
+end.

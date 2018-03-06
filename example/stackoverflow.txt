@@ -1,0 +1,11 @@
+var a;
+procedure fun;
+begin
+write(a);
+a:=a+1;
+call fun;
+end; 
+begin
+a:=1;
+call fun;
+end.

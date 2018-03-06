@@ -1,0 +1,9 @@
+const z=1;    
+var x;
+procedure fun;
+var x;    
+begin           
+end;
+begin
+call fun2; 
+end.

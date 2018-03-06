@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1048</width>
+    <height>621</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Pl0文法编译器</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="minimumSize">
+    <size>
+     <width>800</width>
+     <height>555</height>
+    </size>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout" stretch="7,3">
+    <item>
+     <layout class="QVBoxLayout" name="SourcePcodeVerticalLayout" stretch="7,1">
+      <item>
+       <layout class="QHBoxLayout" name="SourcePcodeHorizontalLayout" stretch="8,3">
+        <item>
+         <layout class="QHBoxLayout" name="lineNumhorizontalLayout" stretch="16">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QPlainTextEdit" name="sourceCodePlainTextEdit"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="pcodePlainTextEdit">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QTextBrowser" name="ErrortextBrowser">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+        <property name="openExternalLinks">
+         <bool>false</bool>
+        </property>
+        <property name="openLinks">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="mainVerticalLayout" stretch="8,1,2,2,1">
+      <item>
+       <widget class="QTextEdit" name="tableTextEdit">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSlider" name="tableSelectHorizontalSlider">
+        <property name="maximum">
+         <number>3</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksBelow</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="prodocePcodeButton">
+        <property name="text">
+         <string>生成Pcode</string>
+        </property>
+        <property name="shortcut">
+         <string>F5</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="ButtonHorizontalLayout">
+        <item>
+         <widget class="QPushButton" name="showTablePushButton">
+          <property name="text">
+           <string>显示符号表</string>
+          </property>
+          <property name="shortcut">
+           <string>F6</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="runPcodePushButton">
+          <property name="text">
+           <string>运行Pcode</string>
+          </property>
+          <property name="shortcut">
+           <string>Ctrl+F5</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1048</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="actionNewFile"/>
+    <addaction name="actionOpenFile"/>
+    <addaction name="actionSaveFile"/>
+    <addaction name="actionSaveAs"/>
+    <addaction name="actionSavePcode"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>关于</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOpenFile">
+   <property name="text">
+    <string>打开文件</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>退出</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionNewFile">
+   <property name="text">
+    <string>新建文件</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionSaveFile">
+   <property name="text">
+    <string>保存文件</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionSaveAs">
+   <property name="text">
+    <string>另存为</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>关于作者</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="actionSavePcode">
+   <property name="text">
+    <string>保存Pcode</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+P</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>runPcodePushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>runPcode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>891</x>
+     <y>575</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>713</x>
+     <y>572</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tableSelectHorizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>changeTable()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1037</x>
+     <y>416</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>538</x>
+     <y>570</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>showTablePushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>showTable()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>802</x>
+     <y>575</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>642</x>
+     <y>573</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>prodocePcodeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>producePcode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1037</x>
+     <y>538</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>499</x>
+     <y>577</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>menubar</sender>
+   <signal>triggered(QAction*)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>menubarTriggle()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>22</x>
+     <y>5</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>74</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sourceCodePlainTextEdit</sender>
+   <signal>cursorPositionChanged()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>updateColLine()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>238</x>
+     <y>154</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>255</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ErrortextBrowser</sender>
+   <signal>anchorClicked(QUrl)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>showError()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>307</x>
+     <y>549</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>55</x>
+     <y>598</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sourceCodePlainTextEdit</sender>
+   <signal>blockCountChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>updateLineNumberAreaWidth(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>272</x>
+     <y>144</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>10</x>
+     <y>154</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sourceCodePlainTextEdit</sender>
+   <signal>updateRequest(QRect,int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>updateLineNumberArea(QRect,int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>192</x>
+     <y>364</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>334</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>runPcode()</slot>
+  <slot>changeTable()</slot>
+  <slot>showTable()</slot>
+  <slot>producePcode()</slot>
+  <slot>menubarTriggle()</slot>
+  <slot>updateColLine()</slot>
+  <slot>showError()</slot>
+  <slot>showLineCount()</slot>
+  <slot>updateLineNumberAreaWidth(int)</slot>
+  <slot>updateLineNumberArea(QRect,int)</slot>
+ </slots>
+</ui>
